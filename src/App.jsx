@@ -113,7 +113,7 @@ const App = () => {
         </div>
       </div>
       <footer className="absolute bottom-1 text-center  font-poppins w-full  mx-auto bg-slate-300 flex justify-center items-center rounded-lg px-2 py-1 flex-col">
-        Made with❤️by Kiran Mahajan
+        Made with❤️& React by Kiran Mahajan
       </footer>
     </div>
   );

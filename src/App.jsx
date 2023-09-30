@@ -41,12 +41,14 @@ const App = () => {
   }, [passLength, includeNum, includeChar, passwordGenerator]);
 
   return (
-    <div className="bg-slate-700 min-h-screen overflow-hidden w-full flex justify-center items-center px-4">
+    <div className="bg-slate-700 min-h-screen overflow-hidden w-full flex justify-center items-center px-4 flex-col">
       <div
         className=" font-poppins w-full max-w-screen-sm mx-auto bg-slate-300 flex justify-center items-center rounded-lg px-4 py-3 flex-col
       "
       >
-        <h2 className="font-semibold text-xl mb-8">Password Generator</h2>
+        <h2 className="font-semibold text-xl mb-8 text-center">
+          Password Generator
+        </h2>
 
         <div className="flex w-full justify-center items-center gap-8 flex-wrap">
           <input
@@ -65,43 +67,54 @@ const App = () => {
             Copy
           </button>
         </div>
+
         <div className="flex w-full flex-wrap justify-center items-center gap-6 mt-8 mb-2">
-          <input
-            id="passLength"
-            type="range"
-            min={8}
-            max={25}
-            value={passLength}
-            className="cursor-pointer"
-            onChange={(e) => {
-              setPassLength(e.target.value);
-            }}
-          />
-          <label htmlFor="passLength" className="mr-4">
-            Length: {passLength}
-          </label>
+          <div className="flex justify-center items-center flex-wrap gap-2 ">
+            <input
+              id="passLength"
+              type="range"
+              min={8}
+              max={25}
+              value={passLength}
+              className="cursor-pointer"
+              onChange={(e) => {
+                setPassLength(e.target.value);
+              }}
+            />
+            <label htmlFor="passLength" className="mr-4">
+              Length: {passLength}
+            </label>
+          </div>
 
-          <input
-            type="checkbox"
-            defaultChecked={setIncludeChar}
-            onChange={() => {
-              setIncludeNum((prevIncludeNum) => !prevIncludeNum);
-            }}
-            id="includeNum"
-          />
-          <label htmlFor="includeNum">Numbers</label>
+          <div className="flex justify-center items-center flex-wrap gap-2">
+            <input
+              type="checkbox"
+              defaultChecked={setIncludeChar}
+              onChange={() => {
+                setIncludeNum((prevIncludeNum) => !prevIncludeNum);
+              }}
+              id="includeNum"
+            />
+            <label htmlFor="includeNum">Numbers</label>
+          </div>
 
-          <input
-            type="checkbox"
-            defaultChecked={includeChar}
-            onChange={() => {
-              setIncludeChar((prevIncludeChar) => !prevIncludeChar);
-            }}
-            id="includeChar"
-          />
-          <label htmlFor="includeChar">Charactors</label>
+          <div className="flex justify-center items-center flex-wrap gap-2">
+            {" "}
+            <input
+              type="checkbox"
+              defaultChecked={includeChar}
+              onChange={() => {
+                setIncludeChar((prevIncludeChar) => !prevIncludeChar);
+              }}
+              id="includeChar"
+            />
+            <label htmlFor="includeChar">Charactors</label>
+          </div>
         </div>
       </div>
+      <footer className="absolute bottom-1 text-center  font-poppins w-full  mx-auto bg-slate-300 flex justify-center items-center rounded-lg px-2 py-1 flex-col">
+        Made with❤️by Kiran Mahajan
+      </footer>
     </div>
   );
 };

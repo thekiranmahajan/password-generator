@@ -99,7 +99,6 @@ const App = () => {
           </div>
 
           <div className="flex justify-center items-center flex-wrap gap-2">
-            {" "}
             <input
               type="checkbox"
               defaultChecked={includeChar}
